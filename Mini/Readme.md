@@ -181,10 +181,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-Your Name
-- GitHub: [@yourusername](https://github.com/yourusername)
+Abhishek B
+- GitHub: https://github.com/abhishek-badiger
 - LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
+- Email: abhishekbadiger907@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -219,5 +219,6 @@ Your Name
 ⭐ **If you find this notebook helpful, please consider giving it a star!**
 
 📧 **Questions or suggestions?** Open an issue or reach out!
+
 
 **Happy Learning! 🎓**
