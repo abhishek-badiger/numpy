@@ -181,7 +181,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-Abhishek B
+Abhishek Badiger
 - GitHub: https://github.com/abhishek-badiger
 - LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
 - Email: abhishekbadiger907@gmail.com
@@ -222,3 +222,4 @@ Abhishek B
 
 
 **Happy Learning! 🎓**
+
