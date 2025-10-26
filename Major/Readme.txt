@@ -1,7 +1,7 @@
 import numpy as np
 
-def arithmetic(a, b):
-    print("\n Performing Arithmetic Operations ")
+def arithmatic(a, b):
+    print("\n Performing Arithmatic Operations ")
     print("Addition of both arrays:", np.add(a, b))
     print("Subtraction of both arrays:", np.subtract(a, b))
     print("Multiplication of both arrays:", np.multiply(a, b))
@@ -66,7 +66,7 @@ def main():
     print("\n=============================================================")
     while True:
         print("\nSelect an option:")
-        print("1. Perform Arithmetic Operations")
+        print("1. Perform Arithmatic Operations")
         print("2. Perform Statistical Analysis")
         print("3. Perform Array Manipulations")
         print("4. Exit the Program")
@@ -82,7 +82,7 @@ def main():
 
             if choice == 1:
                 b = np.array(list(map(float, input("Enter the elements of the second array space-separated: ").split())))
-                arithmetic(a, b)
+                arithmatic(a, b)
             elif choice == 2:
                 statistics(a)
             elif choice == 3:
@@ -93,3 +93,4 @@ def main():
             print("\nAn error occurred:", e)
 
 main()
+
