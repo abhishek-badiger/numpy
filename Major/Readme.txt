@@ -1,183 +1,95 @@
-🧮 NumPy Mathematical Calculator
-
-A Python-based mathematical calculator built using the NumPy library. This project performs basic arithmetic, statistical analysis, and array manipulation through an interactive interface — ideal for students learning NumPy fundamentals and real-world numerical computing.
-
-🎯 Objective
-
-To build a Python-based calculator using NumPy that performs:
-
-Basic arithmetic operations
-
-Statistical analysis
-
-Array manipulation
-
-This project helps users understand how NumPy is used in real-world numerical computing tasks.
-
-✨ Key Features
-1️⃣ Basic Arithmetic Operations
-
-Addition, Subtraction, Multiplication, Division
-
-Power operations between two arrays
-
-2️⃣ Statistical Operations
-
-Mean, Median, Standard Deviation, Variance
-
-Minimum, Maximum, Sum, Product
-
-Shape, Size, and Data Type detection
-
-3️⃣ Array Manipulation
-
-Reshaping arrays (when possible)
-
-Sorting and Reverse Sorting
-
-Unique value extraction
-
-Accessing first and last elements
-
-Filtering values greater than the mean
-
-🚀 Getting Started
-Prerequisites
-Python 3.6+
-NumPy
-Jupyter Notebook (optional)
-
-Installation
-
-Clone the repository:
-
-
-
-Install dependencies:
-
-pip install numpy jupyter
-
-▶️ Running the Project
-Option 1: Jupyter Notebook
-jupyter notebook numpy_calculator.ipynb
-
-Option 2: Python Script
-python numpy_calculator.py
-
-Option 3: Google Colab
-
-Upload .ipynb file to Google Drive
-
-Open with Google Colab
-
-Run all cells
-
-📊 Example Demonstrations
-
-Arithmetic Example:
-
-Array 1: [2, 4, 6]
-Array 2: [1, 3, 5]
-Addition: [3, 7, 11]
-Multiplication: [2, 12, 30]
-Power: [2, 64, 7776]
-
-
-Statistical Example:
-
-Array: [10, 20, 30, 40, 50]
-Mean: 30.0
-Standard Deviation: 14.14
-Variance: 200.0
-
-
-Array Manipulation Example:
-
-Original: [1, 2, 3, 4, 5, 6]
-Reshaped (2x3):
-[[1, 2, 3],
- [4, 5, 6]]
-Sorted (Descending): [6, 5, 4, 3, 2, 1]
-
-📖 Learning Outcomes
-
-After completing this project, you will understand how to:
-✅ Perform vectorized operations using NumPy arrays
-✅ Use statistical functions (mean, std, var, etc.)
-✅ Manipulate array shapes and dimensions
-✅ Filter, sort, and extract data efficiently
-
-🔑 Core NumPy Functions Used
-Category	Functions
-Arithmetic	add(), subtract(), multiply(), divide(), power()
-Statistics	mean(), median(), std(), var(), min(), max(), sum(), prod()
-Array Info	shape, size, dtype
-Manipulation	reshape(), sort(), unique(), ravel()
-📁 Project Structure
-numpy-mathematical-calculator/
-│
-├── numpy_calculator.py           # Main Python script
-├── numpy_calculator.ipynb        # Interactive Jupyter Notebook
-├── README.md                     # Project documentation
-├── requirements.txt              # Python dependencies
-└── LICENSE                       # License file
-
-💡 Use Cases
-
-Educational tool for learning NumPy fundamentals
-
-Demonstration for Python numerical computing
-
-Quick numerical operations and data testing
-
-Classroom teaching resource for beginner data analysts
-
-🤝 Contributing
-
-Contributions are welcome!
-Feel free to:
-
-Add new mathematical operations
-
-Improve code structure
-
-Add GUI or CLI features
-
-Include visualizations
-
-Steps to Contribute
-
-Fork this repository
-
-Create your feature branch (git checkout -b feature/AmazingFeature)
-
-Commit changes (git commit -m 'Add AmazingFeature')
-
-Push to branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📝 License
-
-This project is licensed under the MIT License — see the LICENSE file for details.
-
-## 👨‍💻 Author
-Aditya Narayan Sahu
-
-- GitHub: https://github.com/abhishek-badiger
-- LinkedIn: https://www.linkedin.com/in/abhishek-badiger-684146333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
-- Email: abhishekbadiger907@gmail.com
-
-🙏 Acknowledgments
-
-NumPy Official Documentation
-
-Jupyter Project
-
-Python open-source community
-
-⭐ If you found this project helpful, please give it a star!
-
-📧 For questions or suggestions, feel free to open an issue.
-
-Happy Coding! 🚀
+import numpy as np
+
+def arithmetic(a, b):
+    print("\n Performing Arithmetic Operations ")
+    print("Addition of both arrays:", np.add(a, b))
+    print("Subtraction of both arrays:", np.subtract(a, b))
+    print("Multiplication of both arrays:", np.multiply(a, b))
+    print("Division of both arrays:", np.divide(a, b))
+    print("Power operation between arrays:", np.power(a, b))
+
+def statistics(a):
+    print("\n Performing Statistical Analysis ")
+    print("Mean of the array:", np.mean(a))
+    print("Median of the array:", np.median(a))
+    print("Standard deviation of the array:", np.std(a))
+    print("Variance of the array:", np.var(a))
+    print("Minimum value in the array:", np.min(a))
+    print("Maximum value in the array:", np.max(a))
+    print("Sum of all elements:", np.sum(a))
+    print("Product of all elements:", np.prod(a))
+    print("Shape of the array:", a.shape)
+    print("Size of the array:", a.size)
+    print("Data type of the array:", a.dtype)
+
+def manipulation(a):
+    print("\n Performing Array Manipulations ")
+    print("Original array:", a)
+    print("Shape:", a.shape, "| Total elements:", a.size)
+
+    print("\n All Possible 2D Reshapes ")
+    for i in range(1, a.size + 1):
+        if a.size % i == 0:
+            try:
+                print(f"Reshaped to {i} x {a.size//i}:\n", a.reshape(i, a.size//i))
+            except:
+                pass
+
+    
+    print("\n All Possible 3D Reshapes ")
+    for i in range(1, a.size + 1):
+        for j in range(1, a.size + 1):
+            if a.size % (i * j) == 0:
+                try:
+                    print(f"Reshaped to {i} x {j} x {a.size//(i*j)}:\n", a.reshape(i, j, a.size//(i*j)))
+                except:
+                    pass
+
+    print("\nSorted array (ascending order):", np.sort(a))
+    print("Sorted array (descending order):", np.sort(a)[::-1])
+
+    print("Unique values in the array:", np.unique(a))
+
+    print("First element of the array:", a[0])
+    print("Last element of the array:", a[-1])
+
+    print("Minimum element from the array:",np.min(a))
+    print("Maximum element from the array:",np.max(a))
+
+    mean_val = np.mean(a)
+    print(f"\nMean value of the array: {mean_val}")
+    print("Elements greater than the mean:", a[a > mean_val])
+
+def main():
+    print("=============================================================")
+    print("\n NumPy Mathematical Calculator ")
+    print("\n=============================================================")
+    while True:
+        print("\nSelect an option:")
+        print("1. Perform Arithmetic Operations")
+        print("2. Perform Statistical Analysis")
+        print("3. Perform Array Manipulations")
+        print("4. Exit the Program")
+        print("\n=============================================================")
+
+        try:
+            choice = int(input("Enter your choice (1–4): "))
+            if choice == 4:
+                print("\n Exiting the program... \nThankyou For Using the Calculator \n Bye Byeeee......")
+                break
+
+            a = np.array(list(map(float, input("\nEnter the elements of the first array space-separated: ").split())))
+
+            if choice == 1:
+                b = np.array(list(map(float, input("Enter the elements of the second array space-separated: ").split())))
+                arithmetic(a, b)
+            elif choice == 2:
+                statistics(a)
+            elif choice == 3:
+                manipulation(a)
+            else:
+                print("Please enter a valid option between 1 and 4.")
+        except Exception as e:
+            print("\nAn error occurred:", e)
+
+main()
