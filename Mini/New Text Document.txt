@@ -1,35 +1,86 @@
 import numpy as np
+
 students = np.array(["Shashi", "Muttu", "Shankru"])
 subjects = np.array(["Math", "English", "Science", "History"])
 marks = np.array([[85, 90, 78, 92],
                   [88, 76, 85, 80],
                   [90, 88, 84, 86]])
+
 print("1st Question")
 print(students)
 print(subjects)
 print(marks)
-print("2nd Question")
+
+print("\n2nd Question")
 print("Dimensions of the arrays")
-print(students.ndim)
-print(subjects.ndim)
-print(marks.ndim)
-print("Size of the array")
-print(students.size)
-print(subjects.size)
-print(marks.size)
-print("Shape of the arrays are")
-print(students.shape)
-print(subjects.shape)
-print(marks.shape)
-
-print("3rd Question")
-print(marks.reshape(4,3))
+print("Students ndim:", students.ndim)
+print("Subjects ndim:", subjects.ndim)
+print("Marks ndim:", marks.ndim)
+print("\nSize of the arrays")
+print("Students size:", students.size)
+print("Subjects size:", subjects.size)
+print("Marks size:", marks.size)
+print("\nShape of the arrays")
+print("Students shape:", students.shape)
+print("Subjects shape:", subjects.shape)
+print("Marks shape:", marks.shape)
 
 
-print("4th Question")
-NewStudents=np.array(["samarth","Baveen","Gokul"])
-np.hstack((students,NewStudents))
-NewMarks=np.array([[89,96,78,99],
-                  [98,87,97,100],
-                  [89,79,87,56]])
-np.vstack((marks,NewMarks))
+print("\n3rd Question - Reshaping Marks")
+print(marks.reshape(4, 3))  
+
+print("\n4th Question - Adding New Students and Marks")
+
+NewStudents = np.array(["Samarth", "Baveen", "Gokul"])
+NewMarks = np.array([
+    [89, 96, 78, 99],
+    [98, 87, 97, 100],
+    [89, 79, 87, 56]
+])
+
+
+UpdatedStudents = np.hstack((students, NewStudents))
+UpdatedMarks = np.vstack((marks, NewMarks))
+
+print("Updated Students:\n", UpdatedStudents)
+print("Updated Marks:\n", UpdatedMarks)
+
+
+print("\n5th Question - Data Modification")
+
+UpdatedMarks[1, 2] = 99
+print("Updated Marks after modifying Muttu’s Science mark:\n", UpdatedMarks)
+
+remove_index = np.where(UpdatedStudents == "Shankru")[0][0]
+UpdatedStudents = np.delete(UpdatedStudents, remove_index)
+UpdatedMarks = np.delete(UpdatedMarks, remove_index, axis=0)
+
+print("Students after removing Shankru:\n", UpdatedStudents)
+print("Marks after removal:\n", UpdatedMarks)
+
+
+print("Unique Marks:", np.unique(UpdatedMarks))
+print("\n6th Question - Data Type Handling")
+
+MarksFloat = UpdatedMarks.astype(float)
+MarksInt = UpdatedMarks.astype(int)
+
+print("Marks as Float:\n", MarksFloat)
+print("Marks as Int:\n", MarksInt)
+print("Data type of float array:", MarksFloat.dtype)
+
+
+print("Average marks (float):", np.mean(MarksFloat))
+print("Average marks (int):", np.mean(MarksInt))
+
+print("\n7th Question - Copy vs View Behavior")
+
+MarksView = UpdatedMarks.view()
+MarksView[0, 0] = 999
+print("Original after modifying view:\n", UpdatedMarks)
+
+MarksCopy = UpdatedMarks.copy()
+MarksCopy[0, 0] = 111
+print("Original after modifying copy (no change expected):\n", UpdatedMarks)
+print("Copy after modification:\n", MarksCopy)
+
